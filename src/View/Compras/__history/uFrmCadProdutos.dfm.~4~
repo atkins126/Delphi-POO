@@ -1,0 +1,10 @@
+inherited FrmCadProdutos: TFrmCadProdutos
+  Caption = 'Cadastro de Produtos'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnPrincipal: TPanel
+    inherited PageControl: TPageControl
+      ActivePage = TabConsulta
+    end
+  end
+end

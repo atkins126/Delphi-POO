@@ -1,0 +1,22 @@
+program SistemaPOO;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'View\uFrmPrincipal.pas' {FrmPrincipal},
+  uFrmPadrao in 'View\FormPadrao\uFrmPadrao.pas' {FormPadrao},
+  Model.Interfaces.Formularios in 'Model\Model.Interfaces.Formularios.pas',
+  Model.Interfaces.Formularios.Abrir in 'Model\Model.Interfaces.Formularios.Abrir.pas',
+  uFrmCadProdutos in 'View\Compras\uFrmCadProdutos.pas' {FrmCadProdutos},
+  Model.Interfaces.Conexao in 'Model\Model.Interfaces.Conexao.pas',
+  Model.Interfaces.Conexao.Banco in 'Model\Model.Interfaces.Conexao.Banco.pas',
+  Model.Interfaces.Conexao.Query in 'Model\Model.Interfaces.Conexao.Query.pas';
+
+{$R *.res}
+
+begin
+  ReportMemoryLeaksOnShutdown := true;
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.

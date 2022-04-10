@@ -1,0 +1,12 @@
+unit Model.Interfaces.Formularios;
+
+interface
+
+type
+ iAbrirForms = class
+   ['{D6C79E52-239B-4967-82D8-7C9A216451BD}']
+ end;
+
+implementation
+
+end.

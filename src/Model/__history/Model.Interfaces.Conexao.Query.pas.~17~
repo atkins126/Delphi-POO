@@ -1,0 +1,72 @@
+unit Model.Interfaces.Conexao.Query;
+
+interface
+
+uses
+  data.db,
+  System.SysUtils,
+  Model.Interfaces.Conexao,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error,
+  FireDAC.UI.Intf,
+  FireDAC.Phys.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
+  FireDAC.Phys,
+  FireDAC.Stan.Param,
+  FireDAC.DatS,
+  FireDAC.DApt.Intf,
+  FireDAC.DApt,
+  FireDAC.Phys.MySQLDef,
+  FireDAC.VCLUI.Wait,
+  FireDAC.Comp.UI,
+  FireDAC.Phys.MySQL,
+  FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+ type
+   TModelQuery = class(TInterfacedObject,iQuery)
+     private
+       FConexao : iConexao;
+       FQuery : TFDQuery;
+     public
+      constructor Create(Parent : iConexao);
+      destructor destroy; override;
+      class function New(Parent : iConexao) : iQuery;
+      function Query(aSQL : String) : iQuery;
+   end;
+
+implementation
+
+{ TModelQuery }
+
+
+{ TModelQuery }
+
+constructor TModelQuery.Create(Parent: iConexao);
+begin
+  FConexao := Parent;
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := TFDConnection(FConexao.Conexao);
+end;
+
+destructor TModelQuery.destroy;
+begin
+  freeandnil(FQuery);
+  inherited;
+end;
+
+class function TModelQuery.New(Parent: iConexao): iQuery;
+begin
+  result := Self.Create(Parent);
+end;
+function TModelQuery.Query(aSQL: String): iQuery;
+begin
+  Result := Self;
+  FQuery.SQL.Add(aSQL);
+  FQuery.Open();
+end;
+
+end.

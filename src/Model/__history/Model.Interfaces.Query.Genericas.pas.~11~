@@ -1,0 +1,39 @@
+unit Model.Interfaces.Query.Genericas;
+
+interface
+
+uses
+  Model.Interfaces.Conexao,
+  Controller.Query;
+
+ type
+  TModelQueryGenericas = class(TInterfacedObject,iQueryGenerica)
+    private
+     FQuery : iQuery;
+    public
+    constructor create;
+    destructor destroy; override;
+    class function New : iQueryGenerica;
+  end;
+
+implementation
+
+{ TModelQueryGenericas }
+
+constructor TModelQueryGenericas.create;
+begin
+  FQuery := TControllerQuery.New;
+end;
+
+destructor TModelQueryGenericas.destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelQueryGenericas.New: iQueryGenerica;
+begin
+  result := Self.create;
+end;
+
+end.

@@ -1,0 +1,65 @@
+unit Model.Interfaces.Conexao.Banco;
+
+interface
+
+uses
+  Data.DB,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error,
+  FireDAC.UI.Intf,
+  FireDAC.Phys.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
+  FireDAC.Phys,
+  FireDAC.Stan.Param,
+  FireDAC.DatS,
+  FireDAC.DApt.Intf,
+  FireDAC.DApt,
+  FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef,
+  FireDAC.VCLUI.Wait,
+  FireDAC.Comp.UI,
+  FireDAC.Phys.SQLite,
+  FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client,
+  Model.Interfaces.Conexao;
+
+  type
+   TModelConexao = class(TInterfacedObject, iConexao)
+     private
+     public
+     constructor create;
+     destructor destroy; override;
+     class function New : TCustomConnection;
+     function Conexao : TCustomConnection;
+   end;
+
+implementation
+
+{ TModelConexao }
+
+function TModelConexao.Conexao: TCustomConnection;
+begin
+
+end;
+
+constructor TModelConexao.create;
+begin
+
+end;
+
+destructor TModelConexao.destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelConexao.New: TCustomConnection;
+begin
+  Result := Self.create;
+end;
+
+end.

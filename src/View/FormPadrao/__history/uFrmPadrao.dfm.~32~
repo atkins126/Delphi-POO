@@ -1,0 +1,183 @@
+object FormPadrao: TFormPadrao
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'FormPadrao'
+  ClientHeight = 587
+  ClientWidth = 827
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnPrincipal: TPanel
+    Left = 0
+    Top = 0
+    Width = 827
+    Height = 587
+    Align = alClient
+    BevelKind = bkTile
+    BevelOuter = bvNone
+    TabOrder = 0
+    object pnMenuLeft: TPanel
+      Left = 0
+      Top = 0
+      Width = 113
+      Height = 583
+      Align = alLeft
+      BevelEdges = [beRight]
+      BevelKind = bkTile
+      BevelOuter = bvNone
+      TabOrder = 0
+      object BtnCancelar: TButton
+        Left = 0
+        Top = 147
+        Width = 111
+        Height = 49
+        Align = alTop
+        Caption = 'Cencelar'
+        TabOrder = 3
+        ExplicitTop = 0
+        ExplicitWidth = 151
+      end
+      object BtnExcluir: TButton
+        Left = 0
+        Top = 98
+        Width = 111
+        Height = 49
+        Align = alTop
+        Caption = 'Excluir'
+        TabOrder = 2
+        ExplicitTop = 8
+      end
+      object btnEditar: TButton
+        Left = 0
+        Top = 49
+        Width = 111
+        Height = 49
+        Align = alTop
+        Caption = 'Editar'
+        TabOrder = 1
+        ExplicitTop = 8
+      end
+      object btnNovo: TButton
+        Left = 0
+        Top = 0
+        Width = 111
+        Height = 49
+        Align = alTop
+        Caption = 'Novo'
+        TabOrder = 0
+        ExplicitTop = 8
+      end
+      object btnSair: TButton
+        Left = 0
+        Top = 534
+        Width = 111
+        Height = 49
+        Align = alBottom
+        Caption = 'Sair'
+        TabOrder = 4
+        OnClick = btnSairClick
+        ExplicitTop = 268
+      end
+    end
+    object PageControl: TPageControl
+      Left = 113
+      Top = 0
+      Width = 710
+      Height = 583
+      ActivePage = TabConsulta
+      Align = alClient
+      TabOrder = 1
+      object TabConsulta: TTabSheet
+        Caption = 'Consulta'
+        object dbGrid: TDBGrid
+          AlignWithMargins = True
+          Left = 2
+          Top = 53
+          Width = 698
+          Height = 500
+          Margins.Left = 2
+          Margins.Top = 2
+          Margins.Right = 2
+          Margins.Bottom = 2
+          Align = alClient
+          BorderStyle = bsNone
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+        end
+        object pnTabConsulta: TPanel
+          Left = 0
+          Top = 0
+          Width = 702
+          Height = 51
+          Align = alTop
+          BevelKind = bkTile
+          BevelOuter = bvNone
+          TabOrder = 1
+          object pnTablbConsulta: TPanel
+            Left = 0
+            Top = 0
+            Width = 698
+            Height = 21
+            Align = alTop
+            BevelOuter = bvNone
+            TabOrder = 0
+            object lbBusca: TLabel
+              AlignWithMargins = True
+              Left = 3
+              Top = 3
+              Width = 692
+              Height = 15
+              Align = alClient
+              Caption = 'Busca'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -11
+              Font.Name = 'Tahoma'
+              Font.Style = [fsBold]
+              ParentFont = False
+              Layout = tlCenter
+              ExplicitWidth = 33
+              ExplicitHeight = 13
+            end
+          end
+          object edtBusca: TEdit
+            AlignWithMargins = True
+            Left = 3
+            Top = 24
+            Width = 395
+            Height = 20
+            Margins.Right = 300
+            Align = alClient
+            TabOrder = 1
+            ExplicitLeft = 288
+            ExplicitTop = 16
+            ExplicitWidth = 121
+            ExplicitHeight = 21
+          end
+        end
+      end
+      object TabCadastro: TTabSheet
+        Caption = 'Cadastro'
+        ImageIndex = 1
+      end
+    end
+  end
+  object dsPadrao: TDataSource
+    Left = 736
+    Top = 112
+  end
+end

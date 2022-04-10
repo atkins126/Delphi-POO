@@ -1,0 +1,25 @@
+unit uFrmCadProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmPadrao, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.ComCtrls;
+
+type
+  TFrmCadProdutos = class(TFormPadrao)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCadProdutos: TFrmCadProdutos;
+
+implementation
+
+{$R *.dfm}
+
+end.

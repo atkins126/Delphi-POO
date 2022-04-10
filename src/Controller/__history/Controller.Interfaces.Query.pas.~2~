@@ -1,0 +1,12 @@
+unit Controller.Interfaces.Query;
+
+interface
+
+  type
+    iQueryGenerica = interface
+      ['{56EE47FF-4C4A-4EE2-A48D-D9358A67195B}']
+    end;
+
+implementation
+
+end.

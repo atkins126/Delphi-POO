@@ -1,0 +1,17 @@
+program SistemaPOO;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'View\uFrmPrincipal.pas' {FrmPrincipal},
+  uFrmPadrao in 'View\FormPadrao\uFrmPadrao.pas' {FormPadrao},
+  uFrmCadProdutos in 'View\Compras\uFrmCadProdutos.pas' {FrmCadProdutos};
+
+{$R *.res}
+
+begin
+  ReportMemoryLeaksOnShutdown := true;
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.

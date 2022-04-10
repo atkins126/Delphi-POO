@@ -1,0 +1,10 @@
+unit Model.Interfaces.Conexao.Banco;
+
+interface
+
+  type
+   TModelConexao = class()
+
+implementation
+
+end.

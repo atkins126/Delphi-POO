@@ -1,0 +1,10 @@
+unit Controller.Interfaces.Query.SQL;
+
+interface
+
+  type
+   TControllerSQL = class()
+
+implementation
+
+end.

@@ -1,0 +1,25 @@
+unit Model.Interfaces.Conexao;
+
+interface
+  Uses
+   Data.db;
+
+ type
+  iConexao = interface
+    ['{CFBDC8A8-79B4-4324-920F-2158D260A314}']
+    function Conexao : TCustomConnection;
+  end;
+
+  iQuery = interface
+    ['{D24F0565-6116-40FC-8286-6A996A34B5F2}']
+    function Query(aSQL : String) : iQuery;
+  end;
+
+  iQueryGenerica = interface
+    ['{932F5C94-71B5-412C-9293-71945A50F133}']
+    function Listar(aValue : TDataSource) : iQueryGenerica;
+  end;
+
+implementation
+
+end.

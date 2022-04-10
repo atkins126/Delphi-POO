@@ -1,0 +1,55 @@
+unit Model.Interfaces.Query.SQL;
+
+interface
+
+uses
+Data.DB,
+Model.Interfaces.Conexao;
+
+  type
+    TModelQuerySQL = class(TInterfacedObject, iSQL)
+      private
+        FQuery : iQuery;
+      public
+      constructor create;
+      destructor destroy; override;
+      class function New : iSQL;
+      function Listar(aTabela : String; aDataSource : TDataSource) : iSQL;
+      function ListaCampos(aTabela : String; aDataSource : TDataSource) : iSQL;
+    end;
+
+implementation
+
+{ TModelQuerySQL }
+
+constructor TModelQuerySQL.create;
+begin
+
+end;
+
+destructor TModelQuerySQL.destroy;
+begin
+
+  inherited;
+end;
+
+function TModelQuerySQL.ListaCampos(aTabela: String; aDataSource: TDataSource): iSQL;
+begin
+  Result := Self;
+  FQuery.SQL('select * from ' + aTabela);
+  DataSource.DataSet := FQuery.DataSet;
+end;
+
+function TModelQuerySQL.Listar(aTabela : String; aDataSource: TDataSource): iSQL;
+begin
+  Result := Self;
+  FQuery.SQL('select * from ' + aTabela);
+  aValue.DataSet := FQuery.DataSet;
+end;
+
+class function TModelQuerySQL.New: iSQL;
+begin
+  Result := Self.create;
+end;
+
+end.

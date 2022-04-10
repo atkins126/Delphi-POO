@@ -1,0 +1,16 @@
+unit Model.Interfaces.Formularios;
+
+interface
+
+uses
+ Vcl.Forms;
+
+type
+ iAbrirForms = class
+   ['{D6C79E52-239B-4967-82D8-7C9A216451BD}']
+   function AbrirForm(owner : TForm) : iAbrirForms;
+ end;
+
+implementation
+
+end.

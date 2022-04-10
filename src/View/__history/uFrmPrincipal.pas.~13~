@@ -1,0 +1,57 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Menus,
+  Vcl.StdCtrls,
+  Model.Interfaces.Formularios.Abrir,
+  Model.Interfaces.Conexao.Banco, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Stan.Intf,
+  FireDAC.Phys, FireDAC.Phys.SQLite;
+
+type
+  TFrmPrincipal = class(TForm)
+    MenuPrincipal: TMainMenu;
+    mCompras: TMenuItem;
+    mVendas: TMenuItem;
+    mFinanceiro: TMenuItem;
+    mUtilitarios: TMenuItem;
+    mComprasCadastro: TMenuItem;
+    Button1: TButton;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    procedure mComprasCadastroClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmPrincipal.Button1Click(Sender: TObject);
+begin
+  TConexao.New;
+end;
+
+procedure TFrmPrincipal.mComprasCadastroClick(Sender: TObject);
+begin
+  tAbrirForm.New.FormCadastroProdutos(self).ShowModal;
+end;
+
+end.

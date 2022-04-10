@@ -1,0 +1,21 @@
+unit Controller.Interfaces.Query.SQL;
+
+interface
+
+  uses
+   Controller.Interfaces.Query,
+   Model.Interfaces.Conexao;
+
+  type
+   TControllerSQL = class(TInterfacedObject, iControllerQuery)
+     private
+     public
+     constructor create;
+     destructor destroy; override;
+     class function New : iControllerQuery;
+     function query(Conexao : iConexao) : iQuery;
+   end;
+
+implementation
+
+end.
